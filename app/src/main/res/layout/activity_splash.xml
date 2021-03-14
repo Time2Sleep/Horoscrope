@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/background" />
+        app:srcCompat="@drawable/loading_background" />
 
     <ImageView
         android:id="@+id/imageView_logo"
@@ -35,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/signs_circle" />
+        app:srcCompat="@drawable/loading_circle" />
 
     <ImageView
         android:id="@+id/imageView_stars"

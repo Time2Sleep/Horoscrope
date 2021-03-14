@@ -1,8 +1,8 @@
 package com.example.horoscrope
 
+import android.content.Context
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -10,10 +10,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var textViewSign: TextView = findViewById(R.id.textView_sign)
+        textViewSign.text = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE).getString("Sign","лох")
     }
 
-    fun toastMe(view: View){
-        val myToast = Toast.makeText( this, "Hello, Azat!",Toast.LENGTH_SHORT)
-        myToast.show()
-    }
+
 }

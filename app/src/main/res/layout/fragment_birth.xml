@@ -4,29 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NameFragment">
+    tools:context=".BirthFragment">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
-        android:text="Укажите ваше имя"
+        android:text="укажите вашу дату рождения"
         android:textColor="#242F4B"
-        android:textSize="21sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextName"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/pickBirthday"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextName"
+    <TextView
+        android:id="@+id/textViewHelloName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Дата рождения"
+        android:textColor="#242F4B"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/pickBirthday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/settings_textareabox"
         android:ems="10"
         android:inputType="textCapCharacters"
         android:textAlignment="center"
-        android:textColor="#8D4E1F"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewBirthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="__  __  __"
+        android:textColor="#C1C1C1"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
