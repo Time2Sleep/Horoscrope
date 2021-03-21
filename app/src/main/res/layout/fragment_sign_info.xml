@@ -25,8 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:text="Весы"
-        android:textSize="26sp"
         android:textColor="#242F4B"
+        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,8 +48,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:text="как\nдела"
-        android:textSize="13sp"
         android:textColor="#8D4E1F"
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,78 +78,23 @@
         app:layout_constraintStart_toEndOf="@+id/prevSignButton"
         app:layout_constraintTop_toBottomOf="@+id/signsDate" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/contentConstraintLayout"
+    <LinearLayout
+        android:id="@+id/tabsLinearLayout"
         android:layout_width="350dp"
         android:layout_height="540dp"
-        android:background="@drawable/contentbg_today"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/buttonToday"
-            android:layout_width="80dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="15dp"
-            android:gravity="center"
-            android:text="Сегодня"
-            android:textColor="#8D4E1F"
-            android:textSize="13sp"
-            app:layout_constraintEnd_toStartOf="@+id/buttonTomorrow"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/weekdayTab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/buttonTomorrow"
-            android:layout_width="80dp"
-            android:layout_height="35dp"
-            android:gravity="center"
-            android:text="Завтра"
-            android:textColor="#242F4B"
-            android:textSize="13sp"
-            app:layout_constraintEnd_toStartOf="@+id/buttonWeek"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/buttonToday"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/buttonWeek"
-            android:layout_width="80dp"
-            android:layout_height="35dp"
-            android:gravity="center"
-            android:text="Неделя"
-            android:textColor="#242F4B"
-            android:textSize="13sp"
-            app:iconPadding="0dp"
-            app:layout_constraintEnd_toStartOf="@+id/buttonMonth"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/buttonTomorrow"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/buttonMonth"
-            android:layout_width="80dp"
-            android:layout_height="35dp"
-            android:gravity="center"
-            android:text="Месяц"
-            android:textColor="#242F4B"
-            android:textSize="13sp"
-            app:iconPadding="0dp"
-            app:layout_constraintEnd_toStartOf="@+id/buttonToday"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/buttonWeek"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="315dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:text=""
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonToday" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

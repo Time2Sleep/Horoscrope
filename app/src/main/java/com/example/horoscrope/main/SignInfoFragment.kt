@@ -11,12 +11,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
+import androidx.viewpager2.widget.ViewPager2
 import com.example.horoscrope.R
+import com.example.horoscrope.main.signs.WeekdayViewPagerAdapter
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
 
 class SignInfoFragment : Fragment(R.layout.fragment_sign_info) {
 
-    val bgs = arrayOf(R.drawable.contentbg_today, R.drawable.contentbg_tomorrow,R.drawable.contentbg_week,R.drawable.contentbg_month)
+
     var textViewSign: TextView? = null
     var signImage: ImageView? = null
     var signsDate: TextView? = null
@@ -31,41 +35,39 @@ class SignInfoFragment : Fragment(R.layout.fragment_sign_info) {
 
         textViewSign = view?.findViewById(R.id.textView_sign)
         signImage = view?.findViewById(R.id.signImage)
-        signsDate= view?.findViewById(R.id.signsDate)
-        signId = activity!!.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE).getInt("Sign",0)
+        signsDate = view?.findViewById(R.id.signsDate)
+        signId =
+            activity!!.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE).getInt("Sign", 0)
         val nextSignButton: ImageButton = view.findViewById(R.id.nextSignButton)
         val prevSignButton: ImageButton = view.findViewById(R.id.prevSignButton)
 
         changeSign(signId)
 
         nextSignButton.setOnClickListener {
-            changeSign(signId+1)
+            changeSign(signId + 1)
         }
         prevSignButton.setOnClickListener {
-            changeSign(signId-1)
+            changeSign(signId - 1)
         }
+        val adapter = WeekdayViewPagerAdapter()
+        val viewPager: ViewPager2 = view.findViewById(R.id.pager)
+        viewPager.adapter = adapter;
 
-        val text:TextView = view.findViewById(R.id.textView2)
-        val contentLayout: ConstraintLayout = view.findViewById(R.id.contentConstraintLayout)
-        text.text = activity?.resources?.getStringArray(R.array.texts)?.get(0) ?: "Text not found"
-        val buttons:Array<TextView> = arrayOf(view.findViewById(R.id.buttonToday),view.findViewById(R.id.buttonTomorrow),view.findViewById(R.id.buttonWeek),view.findViewById(R.id.buttonMonth))
-        for (i in buttons.indices){
-            buttons[i].setOnClickListener {
-                for(btn in buttons) btn.setTextColor(Color.parseColor("#242F4B"))
-                buttons[i].setTextColor(Color.parseColor("#8D4E1F"))
-                contentLayout.setBackgroundResource(bgs[i])
-                text.text = activity?.resources?.getStringArray(R.array.texts)?.get(i) ?: "Text not found"
-            }
-        }
+        val tabLayout: TabLayout = view.findViewById(R.id.weekdayTab)
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = "Tab ${position + 1}"
+        }.attach()
         return view
     }
 
-    fun changeSign(id:Int){
-        if(id>11) signId = 0
-        else if(id<0)  signId = 11
+    fun changeSign(id: Int) {
+        if (id > 11) signId = 0
+        else if (id < 0) signId = 11
         else signId = id
 
-        signImage?.setImageResource(resources.obtainTypedArray(R.array.signsImages).getResourceId(signId, 0))
+        signImage?.setImageResource(
+            resources.obtainTypedArray(R.array.signsImages).getResourceId(signId, 0)
+        )
         textViewSign?.text = resources.getStringArray(R.array.signs)[signId]
         signsDate?.text = resources.getStringArray(R.array.signs_date)[signId]
     }
