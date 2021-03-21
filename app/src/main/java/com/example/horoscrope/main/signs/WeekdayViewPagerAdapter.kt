@@ -11,6 +11,7 @@ import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONArrayRequestListener
+import com.androidnetworking.interfaces.StringRequestListener
 import com.example.horoscrope.R
 import com.example.horoscrope.settings.BirthFragment
 import org.json.JSONArray
@@ -30,27 +31,22 @@ class WeekdayViewPagerAdapter :
     }
 
     override fun onBindViewHolder(holder: ViewPagerViewHolder, position: Int) {
-//        val textArray = holder.itemView.resources.getStringArray(R.array.texts)
-//        val curText = textArray[position];
-        AndroidNetworking.get("https://fierce-cove-29863.herokuapp.com/getAllUsers/{pageNumber}")
-            .addPathParameter("pageNumber", "0")
-            .addQueryParameter("limit", "3")
-            .addHeaders("token", "1234")
-            .setTag("test")
+        AndroidNetworking.get("https://guarded-escarpment-96153.herokuapp.com/horoscope")
             .setPriority(Priority.LOW)
             .build()
-            .getAsJSONArray(object : JSONArrayRequestListener {
-
-                override fun onResponse(response: JSONArray?) {
+            .getAsString(object : StringRequestListener {
+                override fun onResponse(response: String?) {
                     holder.itemView.findViewById<TextView>(R.id.weekdayPagerText).text =
-                        response?.toString()
+                        response.toString()
                 }
 
                 override fun onError(anError: ANError?) {
                     holder.itemView.findViewById<TextView>(R.id.weekdayPagerText).text =
-                        "request failed"
+                        anError.toString()
                 }
-            });
+
+            })
+
 
     }
 }
