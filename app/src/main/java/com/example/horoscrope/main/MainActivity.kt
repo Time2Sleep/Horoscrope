@@ -3,6 +3,7 @@ package com.example.horoscrope.main
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import com.androidnetworking.AndroidNetworking
 import com.example.horoscrope.R
 
 class MainActivity : AppCompatActivity() {
@@ -23,8 +24,8 @@ class MainActivity : AppCompatActivity() {
                 changeFragment(id)
             }
         }
+        AndroidNetworking.initialize(this);
         changeFragment(0)
-
     }
 
     fun changeFragment(id:Int){
