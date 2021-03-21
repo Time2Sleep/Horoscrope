@@ -1,4 +1,4 @@
-package com.example.horoscrope
+package com.example.horoscrope.settings
 
 import android.content.Context
 import android.os.Bundle
@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.example.horoscrope.R
 
 class GenderFragment : Fragment(R.layout.fragment_gender) {
     override fun onCreateView(
@@ -47,7 +48,10 @@ class GenderFragment : Fragment(R.layout.fragment_gender) {
         nextButton?.setOnClickListener {
             activity?.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)?.edit()?.putBoolean("isMale", isMale)?.apply()
             activity?.supportFragmentManager?.beginTransaction()?.apply {
-                replace(R.id.frameLayout, BirthFragment())
+                replace(
+                    R.id.frameLayout,
+                    BirthFragment()
+                )
                 commit();
             }
         }

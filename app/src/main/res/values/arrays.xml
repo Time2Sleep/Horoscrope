@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="signsImages">
+        <item>@drawable/sign_0</item>
+        <item>@drawable/sign_1</item>
+        <item>@drawable/sign_2</item>
+        <item>@drawable/sign_3</item>
+        <item>@drawable/sign_4</item>
+        <item>@drawable/sign_5</item>
+        <item>@drawable/sign_6</item>
+        <item>@drawable/sign_7</item>
+        <item>@drawable/sign_8</item>
+        <item>@drawable/sign_9</item>
+        <item>@drawable/sign_10</item>
+        <item>@drawable/sign_11</item>
+    </integer-array>
+</resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NameFragment">
+    tools:context=".settings.NameFragment">
 
     <TextView
         android:id="@+id/textView"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/settings_textareabox"
         android:ems="10"
-        android:inputType="textCapCharacters"
+        android:inputType="textCapSentences"
         android:textAlignment="center"
         android:textColor="#8D4E1F"
         android:textSize="24sp"
@@ -45,5 +45,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

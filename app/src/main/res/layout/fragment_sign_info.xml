@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.SignInfoFragment">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="734dp"
+        android:layout_height="1294dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.533"
+        app:srcCompat="@drawable/main_background" />
+
+    <TextView
+        android:id="@+id/textView_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="Весы"
+        android:textSize="26sp"
+        android:textColor="#242F4B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/signImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sign_1" />
+
+    <TextView
+        android:id="@+id/signsDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="как\nдела"
+        android:textSize="13sp"
+        android:textColor="#8D4E1F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sign" />
+
+    <ImageButton
+        android:id="@+id/prevSignButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/transparent"
+        android:rotation="-180"
+        android:src="@drawable/next"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signsDate" />
+
+    <ImageButton
+        android:id="@+id/nextSignButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/next"
+        app:layout_constraintStart_toEndOf="@+id/prevSignButton"
+        app:layout_constraintTop_toBottomOf="@+id/signsDate" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentConstraintLayout"
+        android:layout_width="350dp"
+        android:layout_height="540dp"
+        android:background="@drawable/contentbg_today"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/buttonToday"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="15dp"
+            android:gravity="center"
+            android:text="Сегодня"
+            android:textColor="#8D4E1F"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonTomorrow"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/buttonTomorrow"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="Завтра"
+            android:textColor="#242F4B"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonWeek"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/buttonToday"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/buttonWeek"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="Неделя"
+            android:textColor="#242F4B"
+            android:textSize="13sp"
+            app:iconPadding="0dp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonMonth"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/buttonTomorrow"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/buttonMonth"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="Месяц"
+            android:textColor="#242F4B"
+            android:textSize="13sp"
+            app:iconPadding="0dp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonToday"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/buttonWeek"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="315dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text=""
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonToday" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
