@@ -14,23 +14,31 @@ import com.example.horoscrope.R
 class NameFragment : Fragment(R.layout.fragment_name) {
 
 
-    override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         val view = inflater.inflate(R.layout.fragment_name, container, false)
-        var nextButton: Button = view.findViewById(R.id.nextButton)
-        var textName: EditText = view.findViewById(R.id.editTextName)
+        val nextButton: Button = view.findViewById(R.id.nextButton)
+        val textName: EditText = view.findViewById(R.id.editTextName)
         nextButton.isEnabled = false
         textName.doAfterTextChanged {
             nextButton.isEnabled = true
         }
 
         nextButton.setOnClickListener {
-            activity?.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)?.edit()?.putString("Name",textName.text.toString())?.apply()
+            activity?.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+                ?.edit()
+                ?.putString("Name", textName.text.toString())
+                ?.apply()
             activity?.supportFragmentManager?.beginTransaction()?.apply {
                 replace(
                     R.id.frameLayout,
                     GenderFragment()
                 )
-                commit();
+                addToBackStack(null)
+                commit()
             }
         }
 

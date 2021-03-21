@@ -33,8 +33,8 @@ class SignInfoFragment : Fragment(R.layout.fragment_sign_info) {
         signImage = view?.findViewById(R.id.signImage)
         signsDate= view?.findViewById(R.id.signsDate)
         signId = activity!!.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE).getInt("Sign",0)
-        var nextSignButton: ImageButton = view.findViewById(R.id.nextSignButton)
-        var prevSignButton: ImageButton = view.findViewById(R.id.prevSignButton)
+        val nextSignButton: ImageButton = view.findViewById(R.id.nextSignButton)
+        val prevSignButton: ImageButton = view.findViewById(R.id.prevSignButton)
 
         changeSign(signId)
 
@@ -45,10 +45,10 @@ class SignInfoFragment : Fragment(R.layout.fragment_sign_info) {
             changeSign(signId-1)
         }
 
-        var text:TextView = view.findViewById(R.id.textView2)
-        var contentLayout: ConstraintLayout = view.findViewById(R.id.contentConstraintLayout)
+        val text:TextView = view.findViewById(R.id.textView2)
+        val contentLayout: ConstraintLayout = view.findViewById(R.id.contentConstraintLayout)
         text.text = activity?.resources?.getStringArray(R.array.texts)?.get(0) ?: "Text not found"
-        var buttons:Array<TextView> = arrayOf(view.findViewById(R.id.buttonToday),view.findViewById(R.id.buttonTomorrow),view.findViewById(R.id.buttonWeek),view.findViewById(R.id.buttonMonth))
+        val buttons:Array<TextView> = arrayOf(view.findViewById(R.id.buttonToday),view.findViewById(R.id.buttonTomorrow),view.findViewById(R.id.buttonWeek),view.findViewById(R.id.buttonMonth))
         for (i in buttons.indices){
             buttons[i].setOnClickListener {
                 for(btn in buttons) btn.setTextColor(Color.parseColor("#242F4B"))

@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.horoscrope.R
 
-class SecondActivity : AppCompatActivity() {
+class UserSettingsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,7 +14,8 @@ class SecondActivity : AppCompatActivity() {
                 R.id.frameLayout,
                 NameFragment()
             )
-            commit();
+            addToBackStack(null)
+            commit()
         }
     }
 }
