@@ -40,6 +40,8 @@
         <item name="tabSelectedTextColor">@color/base_font_color</item>
         <item name="tabTextColor">@color/base_font_color</item>
         <item name="android:textStyle">normal</item>
+        <item name="android:elevation">12dp</item>
+        <item name="elevation">12dp</item>
 
     </style>
 

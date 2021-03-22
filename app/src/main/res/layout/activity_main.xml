@@ -9,6 +9,18 @@
 
 
     <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        android:background="@color/white"
+        android:elevation="24dp">
+
+    </FrameLayout>
+
+    <FrameLayout
         android:id="@+id/mainFrameLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -26,6 +38,7 @@
         android:layout_height="0dp"
         android:layout_marginBottom="10dp"
         android:background="@android:color/transparent"
+        android:elevation="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/navbar_love_btn"
         app:layout_constraintHorizontal_bias="0.5"
@@ -39,6 +52,7 @@
         android:layout_height="0dp"
         android:layout_marginBottom="10dp"
         android:background="@android:color/transparent"
+        android:elevation="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/navbar_moon_btn"
         app:layout_constraintHorizontal_bias="0.5"
@@ -52,6 +66,7 @@
         android:layout_height="0dp"
         android:layout_marginBottom="10dp"
         android:background="@android:color/transparent"
+        android:elevation="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/navbar_profile_btn"
         app:layout_constraintHorizontal_bias="0.5"
@@ -65,6 +80,7 @@
         android:layout_height="0dp"
         android:layout_marginBottom="10dp"
         android:background="@android:color/transparent"
+        android:elevation="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -80,11 +96,12 @@
         android:layout_marginBottom="7dp"
         android:text="Общий"
         android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/secondPage"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:elevation="24dp"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/secondPage"
@@ -93,11 +110,12 @@
         android:layout_marginBottom="7dp"
         android:text="Любовный"
         android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/thirdPage"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/firstPage"
 
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:elevation="24dp"
+        app:layout_constraintStart_toEndOf="@+id/firstPage" />
 
     <TextView
         android:id="@+id/thirdPage"
@@ -106,10 +124,11 @@
         android:layout_marginBottom="7dp"
         android:text="Лунный"
         android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/fourthPage"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/secondPage"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:elevation="24dp"
+        app:layout_constraintStart_toEndOf="@+id/secondPage" />
 
     <TextView
         android:id="@+id/fourthPage"
@@ -118,10 +137,11 @@
         android:layout_marginBottom="7dp"
         android:text="Профиль"
         android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/thirdPage"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:elevation="24dp"
+        app:layout_constraintStart_toEndOf="@+id/thirdPage" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
