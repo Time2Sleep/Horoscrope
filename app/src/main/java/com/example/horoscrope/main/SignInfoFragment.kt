@@ -1,7 +1,6 @@
 package com.example.horoscrope.main
 
 import android.content.Context
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.horoscrope.R
@@ -55,7 +53,7 @@ class SignInfoFragment : Fragment(R.layout.fragment_sign_info) {
 
         val tabLayout: TabLayout = view.findViewById(R.id.weekdayTab)
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = "Tab ${position + 1}"
+            tab.text = resources.getStringArray(R.array.tabs_titles)[position]
         }.attach()
         return view
     }

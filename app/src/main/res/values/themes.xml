@@ -16,8 +16,11 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:datePickerStyle">@style/DatePickerStyle</item>
+        <item name="tabStyle">@style/Tab_theme</item>
 
     </style>
+
+
 
     <style name="Theme.Horoscrope.Fullscreen" parent="Theme.Horoscrope">
         <item name="android:actionBarStyle">@style/Widget.Theme.Horoscrope.ActionBar.Fullscreen
@@ -29,6 +32,15 @@
     <style name="ThemeOverlay.Horoscrope.FullscreenContainer" parent="">
         <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
         <item name="fullscreenTextColor">@color/light_blue_A200</item>
+    </style>
+
+
+    <style name="Tab_theme" parent="">
+        <item name="android:textSize">16sp</item>
+        <item name="tabSelectedTextColor">@color/base_font_color</item>
+        <item name="tabTextColor">@color/base_font_color</item>
+        <item name="android:textStyle">normal</item>
+
     </style>
 
 
