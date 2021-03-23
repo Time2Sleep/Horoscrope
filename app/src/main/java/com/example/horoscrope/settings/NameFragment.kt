@@ -20,7 +20,7 @@ class NameFragment : Fragment(R.layout.fragment_name) {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_name, container, false)
-        val nextButton: Button = view.findViewById(R.id.nextButton)
+        val nextButton: Button = view.findViewById(R.id.nextButtonLove)
         val textName: EditText = view.findViewById(R.id.editTextName)
         nextButton.isEnabled = false
         textName.doAfterTextChanged {

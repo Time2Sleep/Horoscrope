@@ -26,7 +26,7 @@ class BirthFragment : Fragment(R.layout.fragment_birth) {
         val view = inflater.inflate(R.layout.fragment_birth, container, false)
         val birthdayTextView: TextView? = view?.findViewById(R.id.textViewBirthday)
         val pickDate: ImageButton? = view?.findViewById(R.id.pickBirthday)
-        val nextButton: Button? = view?.findViewById(R.id.nextButton)
+        val nextButton: Button? = view?.findViewById(R.id.nextButtonLove)
         nextButton?.isEnabled = false
         var birthDay = "0.0.0"
         val months = arrayOf(

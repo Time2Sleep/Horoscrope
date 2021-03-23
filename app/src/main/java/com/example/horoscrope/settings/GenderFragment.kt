@@ -22,7 +22,7 @@ class GenderFragment : Fragment(R.layout.fragment_gender) {
         val name: String? = activity?.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)?.getString("Name", "LOH")
         helloName?.text = "Привет, $name"
 
-        val nextButton: Button? = view?.findViewById(R.id.nextButton)
+        val nextButton: Button? = view?.findViewById(R.id.nextButtonLove)
         nextButton?.isEnabled = false
         var isMale = true
         val maleButton: ImageButton? = view?.findViewById(R.id.imageButton_man)

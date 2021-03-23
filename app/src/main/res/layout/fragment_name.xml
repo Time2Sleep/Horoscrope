@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/nextButton"
+        android:id="@+id/nextButtonLove"
         android:layout_width="325dp"
         android:layout_height="60dp"
         android:backgroundTint="#242F4B"
