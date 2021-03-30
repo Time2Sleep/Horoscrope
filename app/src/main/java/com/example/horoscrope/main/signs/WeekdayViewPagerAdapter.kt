@@ -1,5 +1,6 @@
 package com.example.horoscrope.main.signs
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +12,18 @@ import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONArrayRequestListener
+import com.androidnetworking.interfaces.JSONObjectRequestListener
 import com.androidnetworking.interfaces.StringRequestListener
 import com.example.horoscrope.R
+import com.example.horoscrope.main.dto.GetHoroscopeDto
+import com.example.horoscrope.main.dto.Period
+import com.example.horoscrope.main.dto.Sign
 import com.example.horoscrope.settings.BirthFragment
 import org.json.JSONArray
+import org.json.JSONObject
+import java.time.LocalDate
+import java.util.*
+import kotlin.coroutines.coroutineContext
 
 class WeekdayViewPagerAdapter :
     RecyclerView.Adapter<WeekdayViewPagerAdapter.ViewPagerViewHolder>() {
@@ -31,22 +40,33 @@ class WeekdayViewPagerAdapter :
     }
 
     override fun onBindViewHolder(holder: ViewPagerViewHolder, position: Int) {
-        AndroidNetworking.get("https://guarded-escarpment-96153.herokuapp.com/horoscope")
+        val period = Period.fromInt(position)
+        var timeMillisToAsk = System.currentTimeMillis()
+        if (position == 1) {
+            timeMillisToAsk += 86400000 //+1 day in millis
+        }
+        val dateString = period.fromDate(Date(timeMillisToAsk))
+        println(dateString)
+        val signId =
+            holder.itemView.context.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+                .getInt("Sign", 0)
+        val sign = Sign.values()[signId]
+        val request = GetHoroscopeDto(period.name, dateString, sign.name)
+        AndroidNetworking.post("https://guarded-escarpment-96153.herokuapp.com/api/horoscope")
             .setPriority(Priority.LOW)
+            .addApplicationJsonBody(request)
             .build()
-            .getAsString(object : StringRequestListener {
-                override fun onResponse(response: String?) {
+            .getAsJSONObject(object : JSONObjectRequestListener {
+                override fun onResponse(response: JSONObject?) {
                     holder.itemView.findViewById<TextView>(R.id.weekdayPagerText).text =
-                        response.toString()
+                        response?.getString("description")
                 }
 
                 override fun onError(anError: ANError?) {
                     holder.itemView.findViewById<TextView>(R.id.weekdayPagerText).text =
-                        anError.toString()
+                        "Не получилось загрузить гороскоп на указанные даты"
                 }
 
             })
-
-
     }
 }
