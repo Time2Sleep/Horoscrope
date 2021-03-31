@@ -10,6 +10,8 @@
     <!-- TODO: Update blank fragment layout -->
 
 
+
+
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="0dp"
@@ -56,16 +58,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/radius_top_right"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline8"
-        android:elevation="24dp"/>
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -80,5 +73,39 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.25" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/radius_top_right"
+        android:elevation="24dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline8">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:elevation="24dp"
+            android:text="Луна находится в фазе Убывающая Луна. Четвертая лунная фаза - последняя фаза лунного месяца. Период четвертой четверти, который завершается новолунием. Для данного периода свойственна неторопливость, мягкость, некая вялость. Это время довольно пассивно.
+\n\n
+Силы и энергия в данное время стремительно идут на убыль. В следствии этого в четвертую лунную фазу рекомендовано оканчивать дела, а также управлять текущими. Свежие мысли и идеи следует отодвинуть на начало последующего лунного месяца. Оптимальное время для подведения итогов.
+\n\n
+В четвертую лунную фазу общая активность уменьшается. В данный период целесообразно уменьшить физические и психические нагрузки. Рекомендовано сторониться конфликтов, как в делах бизнеса, так и в личных отношениях. Типично повышение вероятности ссор и расставаний.
+\n\n
+Люди в этот период крайне чувствительны, впечатлительны, в большой степени склонны к обидам. Это состояние отражается и в сфере бизнеса. Поэтому в деловой сфере значительные встречи желательно приостановить до следующей фазы лунного месяца.
+\n\n
+Луна находится в фазе Убывающая Луна. Четвертая лунная фаза - последняя фаза лунного месяца. Период четвертой четверти, который завершается новолунием. Для данного периода свойственна неторопливость, мягкость, некая вялость. Это время довольно пассивно."
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView14" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

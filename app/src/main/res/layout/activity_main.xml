@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#00FFFFFF"
-    tools:context=".main.MainActivity">
+    tools:context=".main.MainActivity"
+    android:fitsSystemWindows="false">
 
 
     <FrameLayout
@@ -94,13 +95,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="7dp"
+        android:elevation="24dp"
         android:text="Общий"
         android:textAlignment="center"
+        android:textColor="@color/second_font_color"
         app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toStartOf="@+id/secondPage"
         app:layout_constraintHorizontal_bias="0.5"
-
-        android:elevation="24dp"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -110,6 +112,7 @@
         android:layout_marginBottom="7dp"
         android:text="Любовный"
         android:textAlignment="center"
+        android:textColor="@color/second_font_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/thirdPage"
         app:layout_constraintHorizontal_bias="0.5"
@@ -124,6 +127,7 @@
         android:layout_marginBottom="7dp"
         android:text="Лунный"
         android:textAlignment="center"
+        android:textColor="@color/second_font_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/fourthPage"
         app:layout_constraintHorizontal_bias="0.5"
@@ -137,6 +141,7 @@
         android:layout_marginBottom="7dp"
         android:text="Профиль"
         android:textAlignment="center"
+        android:textColor="@color/second_font_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

@@ -29,74 +29,217 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imageView15"
+                android:id="@+id/maleSignImg"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginEnd="20dp"
 
                 android:src="@drawable/sign_9"
-                app:layout_constraintBottom_toTopOf="@+id/imageView18"
-                app:layout_constraintEnd_toStartOf="@+id/progressBar2"
+                app:layout_constraintBottom_toTopOf="@+id/guideline4"
+                app:layout_constraintEnd_toStartOf="@+id/compatProgressBar"
                 app:layout_constraintStart_toStartOf="@+id/guideline7"
                 app:layout_constraintTop_toTopOf="@+id/guideline12" />
 
             <ProgressBar
-                android:id="@+id/progressBar2"
+                android:id="@+id/compatProgressBar"
                 style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:progress="50"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView17"
+                app:layout_constraintBottom_toBottomOf="@+id/femaleSignImg"
                 app:layout_constraintEnd_toStartOf="parent"
                 app:layout_constraintStart_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guideline12"
-                android:layout_width="0dp"
-                app:layout_constraintWidth_percent="0.3"/>
+                app:layout_constraintWidth_percent="0.3" />
 
             <ImageView
-                android:id="@+id/imageView17"
+                android:id="@+id/femaleSignImg"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="20dp"
                 android:src="@drawable/sign_0"
-                app:layout_constraintBottom_toTopOf="@+id/imageView18"
+                app:layout_constraintBottom_toTopOf="@+id/guideline4"
                 app:layout_constraintEnd_toStartOf="@+id/guideline8"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/progressBar2"
+                app:layout_constraintStart_toEndOf="@+id/compatProgressBar"
                 app:layout_constraintTop_toTopOf="@+id/guideline12" />
 
-            <ImageView
+            <FrameLayout
                 android:id="@+id/imageView18"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/compatibility_block_bg"
+                android:background="@drawable/compt_block"
+                android:elevation="12dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
                 app:layout_constraintBottom_toTopOf="@+id/imageView19"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline8"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guideline4"
-                android:elevation="12dp"/>
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="@+id/guideline4">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Любовь" />
 
-            <ImageView
+                <ProgressBar
+                    android:id="@+id/compatLoveProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:progress="50" />
+
+                <TextView
+                    android:id="@+id/compatLovePercentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginRight="20dp"
+                    android:text="50%" />
+
+                <TextView
+                    android:id="@+id/compatLoveText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Важно реалистично смотреть на вещи и
+стараться не подменять планы мечтами.
+Сосредоточьтесь на том, чего можете
+добиться; время больших достижений
+наступит несколько позже. Пригодятся
+знания, полученные раньше. Не раз и не два
+вы похвалите себя за то, что прислушались к
+хорошим советам." />
+
+            </FrameLayout>
+
+            <FrameLayout
                 android:id="@+id/imageView19"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/compatibility_block_bg"
+                android:elevation="12dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/compt_block"
                 app:layout_constraintBottom_toTopOf="@+id/imageView20"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline8"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                android:elevation="12dp" />
+                app:layout_constraintStart_toStartOf="@+id/guideline7">
 
-            <ImageView
+                <TextView
+                    android:id="@+id/compatFrinedship"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Дружба" />
+
+                <ProgressBar
+                    android:id="@+id/compatFriendshipProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:progress="50" />
+
+                <TextView
+                    android:id="@+id/compatFriendshipPercentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginRight="20dp"
+                    android:text="50%" />
+
+                <TextView
+                    android:id="@+id/compatFriendshipText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Важно реалистично смотреть на вещи и
+стараться не подменять планы мечтами.
+Сосредоточьтесь на том, чего можете
+добиться; время больших достижений
+наступит несколько позже. Пригодятся
+знания, полученные раньше. Не раз и не два
+вы похвалите себя за то, что прислушались к
+хорошим советам." />
+            </FrameLayout>
+
+            <FrameLayout
                 android:id="@+id/imageView20"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/compatibility_block_bg"
+                android:elevation="12dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/compt_block"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline8"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                android:elevation="12dp"/>
+                app:layout_constraintStart_toStartOf="@+id/guideline7">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Брак" />
+
+                <ProgressBar
+                    android:id="@+id/compatMarriageProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:progress="50" />
+
+                <TextView
+                    android:id="@+id/compatMarriagePercentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginRight="20dp"
+                    android:text="50%" />
+
+                <TextView
+                    android:id="@+id/compatMarriageText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Важно реалистично смотреть на вещи и
+стараться не подменять планы мечтами.
+Сосредоточьтесь на том, чего можете
+добиться; время больших достижений
+наступит несколько позже. Пригодятся
+знания, полученные раньше. Не раз и не два
+вы похвалите себя за то, что прислушались к
+хорошим советам." />
+            </FrameLayout>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline7"
@@ -117,14 +260,49 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.23" />
+                app:layout_constraintGuide_percent="0.2" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.08" />
+                app:layout_constraintGuide_percent="0.05" />
+
+            <TextView
+                android:id="@+id/maleSignTitleCompat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="TextView"
+                android:textColor="@color/second_font_color"
+                app:layout_constraintBottom_toBottomOf="@+id/maleSignImg"
+                app:layout_constraintEnd_toEndOf="@+id/maleSignImg"
+                app:layout_constraintHorizontal_bias="0.619"
+                app:layout_constraintStart_toStartOf="@+id/maleSignImg" />
+
+            <TextView
+                android:id="@+id/femaleSignTitleCompat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="TextView"
+                android:textColor="@color/second_font_color"
+                app:layout_constraintBottom_toBottomOf="@+id/maleSignImg"
+                app:layout_constraintEnd_toEndOf="@+id/femaleSignImg"
+                app:layout_constraintHorizontal_bias="0.619"
+                app:layout_constraintStart_toStartOf="@+id/femaleSignImg" />
+
+            <TextView
+                android:id="@+id/compatPercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="50%"
+                app:layout_constraintBottom_toTopOf="@+id/compatProgressBar"
+                app:layout_constraintEnd_toEndOf="@+id/compatProgressBar"
+                app:layout_constraintStart_toStartOf="@+id/compatProgressBar" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

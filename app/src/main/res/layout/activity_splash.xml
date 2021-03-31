@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTintMode="screen"
-    tools:context=".SplashActivity">
+    tools:context=".SplashActivity"
+    android:fitsSystemWindows="false">
 
     <ImageView
         android:id="@+id/imageView2"
