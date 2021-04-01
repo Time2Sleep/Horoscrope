@@ -39,26 +39,30 @@ class SignInfoFragment : Fragment(R.layout.fragment_sign_info) {
         val nextSignButton: ImageButton = view.findViewById(R.id.nextSignButton)
         val prevSignButton: ImageButton = view.findViewById(R.id.prevSignButton)
 
-        changeSign(signId)
+        changeSign(signId, view)
 
         nextSignButton.setOnClickListener {
-            changeSign(signId + 1)
+            changeSign(signId + 1, view)
         }
         prevSignButton.setOnClickListener {
-            changeSign(signId - 1)
+            changeSign(signId - 1, view)
         }
-        val adapter = WeekdayViewPagerAdapter()
+
+        return view
+    }
+
+    private fun setupViewPager(view: View) {
+        val adapter = WeekdayViewPagerAdapter(signId)
         val viewPager: ViewPager2 = view.findViewById(R.id.pager)
-        viewPager.adapter = adapter;
+        viewPager.adapter = adapter
 
         val tabLayout: TabLayout = view.findViewById(R.id.weekdayTab)
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = resources.getStringArray(R.array.tabs_titles)[position]
         }.attach()
-        return view
     }
 
-    fun changeSign(id: Int) {
+    fun changeSign(id: Int, view: View) {
         if (id > 11) signId = 0
         else if (id < 0) signId = 11
         else signId = id
@@ -68,5 +72,6 @@ class SignInfoFragment : Fragment(R.layout.fragment_sign_info) {
         )
         textViewSign?.text = resources.getStringArray(R.array.signs)[signId]
         signsDate?.text = resources.getStringArray(R.array.signs_date)[signId]
+        setupViewPager(view)
     }
 }

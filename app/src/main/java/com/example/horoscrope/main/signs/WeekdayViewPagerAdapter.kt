@@ -25,7 +25,7 @@ import java.time.LocalDate
 import java.util.*
 import kotlin.coroutines.coroutineContext
 
-class WeekdayViewPagerAdapter :
+class WeekdayViewPagerAdapter(private val signId: Int) :
     RecyclerView.Adapter<WeekdayViewPagerAdapter.ViewPagerViewHolder>() {
     inner class ViewPagerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
@@ -47,9 +47,6 @@ class WeekdayViewPagerAdapter :
         }
         val dateString = period.fromDate(Date(timeMillisToAsk))
         println(dateString)
-        val signId =
-            holder.itemView.context.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
-                .getInt("Sign", 0)
         val sign = Sign.values()[signId]
         val request = GetHoroscopeDto(period.name, dateString, sign.name)
         AndroidNetworking.post("https://guarded-escarpment-96153.herokuapp.com/api/horoscope")
@@ -66,7 +63,6 @@ class WeekdayViewPagerAdapter :
                     holder.itemView.findViewById<TextView>(R.id.weekdayPagerText).text =
                         "Не получилось загрузить гороскоп на указанные даты"
                 }
-
             })
     }
 }
