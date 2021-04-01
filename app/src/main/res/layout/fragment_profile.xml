@@ -99,13 +99,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="7dp"
         android:text="Пол"
-        app:layout_constraintBottom_toTopOf="@+id/imageView11"
+        app:layout_constraintBottom_toTopOf="@+id/profileChangeGender"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView11"
+    <ImageButton
+        android:id="@+id/profileChangeGender"
+        android:background="@android:color/transparent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -114,8 +115,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView12"
+    <ImageButton
+        android:id="@+id/profileChangeBirthday"
+        android:background="@android:color/transparent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
@@ -130,15 +132,16 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="7dp"
         android:text="Дата рождения"
-        app:layout_constraintBottom_toTopOf="@+id/imageView12"
+        app:layout_constraintBottom_toTopOf="@+id/profileChangeBirthday"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/profileName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:singleLine="true"
         android:text="ИМЯ"
         android:textColor="#8D4E1F"
         android:textSize="15sp"
@@ -154,10 +157,10 @@
         android:text="Мужской"
         android:textColor="#8D4E1F"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintBottom_toBottomOf="@+id/profileChangeGender"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView11" />
+        app:layout_constraintTop_toTopOf="@+id/profileChangeGender" />
 
     <TextView
         android:id="@+id/profileBirth"
@@ -166,10 +169,10 @@
         android:text="21     Апреля     1989"
         android:textColor="#8D4E1F"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+        app:layout_constraintBottom_toBottomOf="@+id/profileChangeBirthday"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView12" />
+        app:layout_constraintTop_toTopOf="@+id/profileChangeBirthday" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
