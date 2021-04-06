@@ -1,7 +1,6 @@
 package com.example.horoscrope.main
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -90,7 +89,9 @@ class CompatibilityFragment : Fragment(R.layout.fragment_compatibility) {
                 }
 
                 override fun onError(anError: ANError?) {
-                    compatLoveText.text = anError.toString()
+                    compatLoveText.text = "Не удалось загрузить данные"
+                    compatMarriageText.text = "Не удалось загрузить данные"
+                    compatFriendshipText.text = "Не удалось загрузить данные"
                 }
             })
 

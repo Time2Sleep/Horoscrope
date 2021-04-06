@@ -9,8 +9,11 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.room.Room
+import androidx.room.RoomDatabase
 import androidx.viewpager2.widget.ViewPager2
 import com.example.horoscrope.R
+import com.example.horoscrope.main.db.AppDatabase
 import com.example.horoscrope.main.signs.WeekdayViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -18,18 +21,22 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class SignInfoFragment : Fragment(R.layout.fragment_sign_info) {
 
-
     var textViewSign: TextView? = null
     var signImage: ImageView? = null
     var signsDate: TextView? = null
     var signId: Int = 0
-
+    lateinit var db: AppDatabase;
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_sign_info, container, false)
+        db = Room.databaseBuilder(
+            view.context,
+            AppDatabase::class.java, "horoscope-db"
+        ).allowMainThreadQueries().build()
+
 
         textViewSign = view?.findViewById(R.id.textView_sign)
         signImage = view?.findViewById(R.id.signImage)
@@ -52,7 +59,7 @@ class SignInfoFragment : Fragment(R.layout.fragment_sign_info) {
     }
 
     private fun setupViewPager(view: View) {
-        val adapter = WeekdayViewPagerAdapter(signId)
+        val adapter = WeekdayViewPagerAdapter(signId, db)
         val viewPager: ViewPager2 = view.findViewById(R.id.pager)
         viewPager.adapter = adapter
 
@@ -61,9 +68,9 @@ class SignInfoFragment : Fragment(R.layout.fragment_sign_info) {
             tab.text = resources.getStringArray(R.array.tabs_titles)[position]
 
         }.attach()
-        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(pos: Int) {
-                if(pos==3) viewPager.setBackgroundResource(R.drawable.sign_info_bg)
+                if (pos == 3) viewPager.setBackgroundResource(R.drawable.sign_info_bg)
                 else viewPager.setBackgroundResource(R.drawable.radius_top_right)
             }
         })

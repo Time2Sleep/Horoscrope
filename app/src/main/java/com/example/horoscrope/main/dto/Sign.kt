@@ -1,6 +1,6 @@
-package com.example.horoscrope.main.dto;
+package com.example.horoscrope.main.dto
 
-public enum Sign {
+enum class Sign{
     OVEN,
     TELEC,
     BLIZNECI,
