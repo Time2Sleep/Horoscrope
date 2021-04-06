@@ -30,7 +30,9 @@ class MainActivity : AppCompatActivity() {
 
     fun changeFragment(id:Int){
         supportFragmentManager.beginTransaction().apply {
+            setCustomAnimations(R.anim.fragments_in,R.anim.fragments_out)
             replace(R.id.mainFrameLayout,fragments[id])
+            addToBackStack(null)
             commit();
         }
     }

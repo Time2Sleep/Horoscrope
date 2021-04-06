@@ -59,7 +59,14 @@ class SignInfoFragment : Fragment(R.layout.fragment_sign_info) {
         val tabLayout: TabLayout = view.findViewById(R.id.weekdayTab)
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = resources.getStringArray(R.array.tabs_titles)[position]
+
         }.attach()
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+            override fun onPageSelected(pos: Int) {
+                if(pos==3) viewPager.setBackgroundResource(R.drawable.sign_info_bg)
+                else viewPager.setBackgroundResource(R.drawable.radius_top_right)
+            }
+        })
     }
 
     fun changeSign(id: Int, view: View) {

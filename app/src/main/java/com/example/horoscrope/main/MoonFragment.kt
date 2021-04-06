@@ -19,7 +19,7 @@ import org.json.JSONObject
 import java.util.*
 
 class MoonFragment : Fragment(R.layout.fragment_moon) {
-
+    val months = arrayOf("января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,6 +29,10 @@ class MoonFragment : Fragment(R.layout.fragment_moon) {
         val timeMillisToAsk = System.currentTimeMillis()
         val period = Period.LUNAR;
         val dateString = period.fromDate(Date(timeMillisToAsk))
+        val moonDate: TextView = view.findViewById(R.id.moonDate)
+        val monthNum = dateString.substringAfter('-').substringBefore('-').toInt()
+        val humanDate = dateString.substringAfter('-').substringAfter('-').toInt().toString() +" "+ months[monthNum-1]
+        moonDate.text = humanDate
         val signId =
             context?.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)?.getInt("Sign", 0)
         val sign = Sign.values()[signId ?: 0]

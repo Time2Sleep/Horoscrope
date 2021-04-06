@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Horoscrope</string>
+    <string name="app_name">Гадалкин Дом</string>
     <string name="counter">0</string>
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
@@ -23,7 +23,7 @@
     <string-array name="signs_date">
         <item>21 марта\n20 апреля</item>
         <item>21 апреля\n21 мая</item>
-        <item>22 мая\n21июня</item>
+        <item>22 мая\n21 июня</item>
         <item>22 июня\n22 июля</item>
         <item>23 июля\n23 августа</item>
         <item>24 августа\n23 сентября</item>

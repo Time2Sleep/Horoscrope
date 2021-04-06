@@ -4,10 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.HorizontalScrollView
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.Guideline
 import androidx.fragment.app.Fragment
@@ -27,7 +24,11 @@ class LoveFragment : Fragment(R.layout.fragment_love) {
         val view = inflater.inflate(R.layout.fragment_love, container, false)
         var btn: Button = view.findViewById(R.id.nextButtonLove)
         var maleBtn: ImageButton = view.findViewById(R.id.maleSignBtn)
+        var maleIcon: ImageView = view.findViewById(R.id.LoveMaleIcon)
+        var maleText: TextView = view.findViewById(R.id.LoveMaleText)
         var femaleBtn: ImageButton = view.findViewById(R.id.femaleSignBtn)
+        var femaleIcon: ImageView = view.findViewById(R.id.LoveFemaleIcon)
+        var femaleText: TextView = view.findViewById(R.id.LoveFemaleText)
         var maleTitle: TextView = view.findViewById(R.id.maleSignTitle)
         var femaleTitle: TextView = view.findViewById(R.id.femaleSignTitle)
         var compatGuidline: Guideline = view.findViewById(R.id.compatibilityGuidline)
@@ -41,6 +42,11 @@ class LoveFragment : Fragment(R.layout.fragment_love) {
         fun setSign(signId: Int, btn: ImageButton, textView: TextView){
             btn.setImageResource(resources.obtainTypedArray(R.array.signsImages).getResourceId(signId, 0))
             textView.text = resources.getStringArray(R.array.signs)[signId]
+
+            maleBtn.alpha = 1f
+            femaleBtn.alpha = 1f
+            maleTitle.alpha = 1f
+            femaleTitle.alpha = 1f
         }
 
         fun openSignsSelector(){
@@ -72,14 +78,44 @@ class LoveFragment : Fragment(R.layout.fragment_love) {
         setSign(0, maleBtn, maleTitle)
         setSign(0, femaleBtn, femaleTitle)
 
-        maleBtn.setOnClickListener {
+        fun MalePressed(){
             openSignsSelector();
             isMaleEditing = true;
+            maleBtn.alpha = 1f
+            femaleBtn.alpha = 0.1f
+            maleTitle.alpha = 1f
+            femaleTitle.alpha = 0.1f
         }
-        femaleBtn.setOnClickListener {
+
+        fun FemalePressed(){
             openSignsSelector();
             isMaleEditing = false;
+            maleBtn.alpha = 0.1f
+            femaleBtn.alpha = 1f
+            maleTitle.alpha = 0.1f
+            femaleTitle.alpha = 1f
         }
+
+        maleBtn.setOnClickListener {
+            MalePressed()
+        }
+        maleIcon.setOnClickListener {
+            MalePressed()
+        }
+        maleText.setOnClickListener {
+            MalePressed()
+        }
+        femaleBtn.setOnClickListener {
+            FemalePressed()
+        }
+        femaleIcon.setOnClickListener {
+            FemalePressed()
+        }
+        femaleText.setOnClickListener {
+            FemalePressed()
+        }
+
+
 
         var compatFragment: Fragment = CompatibilityFragment()
         btn.setOnClickListener {
@@ -88,10 +124,13 @@ class LoveFragment : Fragment(R.layout.fragment_love) {
                 putInt("femaleSignId", femaleSignId)
             }
             activity?.supportFragmentManager?.beginTransaction()?.apply {
+
+                setCustomAnimations(R.anim.fragments_in,R.anim.fragments_out)
                 replace(
                     R.id.mainFrameLayout,
                     compatFragment
                 )
+                addToBackStack(null)
                 commit()
             }
         }

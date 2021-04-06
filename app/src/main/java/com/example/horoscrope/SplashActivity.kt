@@ -7,12 +7,13 @@ import android.os.Handler
 import android.os.Looper
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.horoscrope.main.MainActivity
 import com.example.horoscrope.settings.UserSettingsActivity
 
 class SplashActivity : AppCompatActivity() {
-    private val SPLASH_TIME_OUT: Long = 1
+    private val SPLASH_TIME_OUT: Long = 1500
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
@@ -22,6 +23,8 @@ class SplashActivity : AppCompatActivity() {
 
         val logo: ImageView = findViewById(R.id.imageView_logo)
         logo.animation = AnimationUtils.loadAnimation(this, R.anim.fade_in_animation)
+        val logoName: TextView = findViewById(R.id.splashLogoName)
+        logoName.animation = AnimationUtils.loadAnimation(this, R.anim.fade_in_animation)
 
         val stars: ImageView = findViewById(R.id.imageView_stars)
         stars.animation = AnimationUtils.loadAnimation(this, R.anim.fade_in_animation)

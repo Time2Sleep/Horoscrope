@@ -18,6 +18,7 @@
         <item name="android:datePickerStyle">@style/DatePickerStyle</item>
         <item name="tabStyle">@style/Tab_theme</item>
         <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:fontFamily">@font/arkhip</item>
     </style>
 
 

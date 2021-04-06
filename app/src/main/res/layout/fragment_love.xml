@@ -51,11 +51,11 @@
         android:id="@+id/imageView5"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/love_genders"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/love_genders_bg"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/femaleSignBtn"
+        app:layout_constraintStart_toStartOf="@+id/maleSignBtn"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <ImageView
@@ -72,7 +72,7 @@
         android:id="@+id/nextButtonLove"
         android:layout_width="325dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="#242F4B"
         android:text="Продолжить"
         app:iconTint="#FFEB3B"
@@ -350,5 +350,49 @@
                 app:layout_constraintStart_toEndOf="@+id/imageButton11" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </HorizontalScrollView>
+
+    <ImageView
+        android:id="@+id/LoveMaleIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/love_male_sign"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="@+id/maleSignBtn"
+        app:layout_constraintStart_toStartOf="@+id/maleSignBtn"
+        app:layout_constraintTop_toTopOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.26" />
+
+    <ImageView
+        android:id="@+id/LoveFemaleIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/love_female_sign"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="@+id/femaleSignBtn"
+        app:layout_constraintStart_toStartOf="@+id/femaleSignBtn"
+        app:layout_constraintTop_toTopOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.26" />
+
+    <TextView
+        android:id="@+id/LoveMaleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Мужчина"
+        android:textColor="@color/base_font_color"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="@+id/LoveMaleIcon"
+        app:layout_constraintStart_toStartOf="@+id/LoveMaleIcon"
+        app:layout_constraintTop_toBottomOf="@+id/LoveMaleIcon" />
+
+    <TextView
+        android:id="@+id/LoveFemaleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Женщина"
+        android:textColor="@color/base_font_color"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="@+id/LoveFemaleIcon"
+        app:layout_constraintStart_toStartOf="@+id/LoveFemaleIcon"
+        app:layout_constraintTop_toBottomOf="@+id/LoveFemaleIcon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

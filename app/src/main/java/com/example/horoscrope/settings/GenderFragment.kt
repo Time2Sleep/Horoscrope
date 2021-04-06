@@ -1,6 +1,7 @@
 package com.example.horoscrope.settings
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,21 +28,32 @@ class GenderFragment : Fragment(R.layout.fragment_gender) {
         var isMale = true
         val maleButton: ImageButton? = view?.findViewById(R.id.imageButton_man)
         val femaleButton: ImageButton? = view?.findViewById(R.id.imageButton_woman)
+        val maleText: TextView = view.findViewById(R.id.maleText)
+        val femaleText: TextView = view.findViewById(R.id.femaleText)
 
         maleButton?.setOnClickListener{
-            maleButton.setImageResource(R.drawable.settings_man_selected)
+            maleButton.setImageResource(R.drawable.male_choose_selected)
             maleButton.alpha = 1f
-            femaleButton?.setImageResource(R.drawable.settings_woman)
+            maleText.alpha = 1f
+            maleText.setTextColor(Color.parseColor("#8D4E1F"))
+            femaleButton?.setImageResource(R.drawable.female_choose)
             femaleButton?.alpha = 0.3f
+            femaleText.alpha = 0.3f
+            femaleText.setTextColor(Color.parseColor("#242F4B"))
             isMale = true
             nextButton?.isEnabled = true
         }
 
         femaleButton?.setOnClickListener {
-            femaleButton.setImageResource(R.drawable.setting_woman_selected)
+            femaleButton.setImageResource(R.drawable.female_choose_selected)
             maleButton?.alpha = 0.3f
-            maleButton?.setImageResource(R.drawable.settings_man)
+            maleText.alpha = 0.3f
+            maleText.setTextColor(Color.parseColor("#242F4B"))
+            maleButton?.setImageResource(R.drawable.male_choose)
             femaleButton.alpha = 1f
+            femaleText.alpha = 1f
+            femaleText.setTextColor(Color.parseColor("#8D4E1F"))
+
             isMale = false
             nextButton?.isEnabled = true
         }
@@ -52,6 +64,8 @@ class GenderFragment : Fragment(R.layout.fragment_gender) {
                 ?.putBoolean("isMale", isMale)
                 ?.apply()
             activity?.supportFragmentManager?.beginTransaction()?.apply {
+
+                setCustomAnimations(R.anim.fragments_in,R.anim.fragments_out)
                 replace(
                     R.id.frameLayout,
                     BirthFragment()

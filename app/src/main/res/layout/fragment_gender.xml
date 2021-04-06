@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
-        android:src="@drawable/settings_man"
+        android:src="@drawable/male_choose"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageButton_woman"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +46,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
-        android:src="@drawable/settings_woman"
+        android:src="@drawable/female_choose"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButton_man"
@@ -56,13 +57,34 @@
         android:id="@+id/nextButtonLove"
         android:layout_width="325dp"
         android:layout_height="60dp"
-        android:backgroundTint="#242F4B"
+        android:background="@drawable/btn"
+        app:backgroundTint="@null"
         android:text="Продолжить"
-        app:iconTint="#FFEB3B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8" />
 
+    <TextView
+        android:id="@+id/maleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:text="Мужчина"
+        android:textColor="@color/base_font_color"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton_man"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton_man"
+        app:layout_constraintStart_toStartOf="@+id/imageButton_man" />
+
+    <TextView
+        android:id="@+id/femaleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:text="Женщина"
+        android:textColor="@color/base_font_color"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton_man"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton_woman"
+        app:layout_constraintStart_toStartOf="@+id/imageButton_woman" />
 </androidx.constraintlayout.widget.ConstraintLayout>

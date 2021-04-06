@@ -33,6 +33,8 @@ class NameFragment : Fragment(R.layout.fragment_name) {
                 ?.putString("Name", textName.text.toString())
                 ?.apply()
             activity?.supportFragmentManager?.beginTransaction()?.apply {
+
+                setCustomAnimations(R.anim.fragments_in,R.anim.fragments_out)
                 replace(
                     R.id.frameLayout,
                     GenderFragment()

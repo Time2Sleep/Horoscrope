@@ -24,21 +24,22 @@
         android:id="@+id/textView_sign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
         android:text="Весы"
         android:textColor="#242F4B"
         android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32" />
 
     <ImageView
         android:id="@+id/signImage"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="40dp"
         android:layout_marginEnd="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/sign_1" />
@@ -50,6 +51,7 @@
         android:layout_marginTop="7dp"
         android:text="как\nдела"
         android:textColor="#8D4E1F"
+        android:alpha="0.5"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
@@ -58,24 +60,24 @@
 
     <ImageButton
         android:id="@+id/prevSignButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="15dp"
         android:background="@android:color/transparent"
         android:rotation="-180"
         android:src="@drawable/next"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signsDate" />
 
     <ImageButton
         android:id="@+id/nextSignButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
         android:background="@android:color/transparent"
         android:src="@drawable/next"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintStart_toEndOf="@+id/prevSignButton"
         app:layout_constraintTop_toBottomOf="@+id/signsDate" />
 
@@ -93,8 +95,8 @@
             android:id="@+id/weekdayTab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="12dp"
-            android:layout_marginRight="7dp"
+            android:elevation="5dp"
+            android:layout_marginRight="7.5dp"
             app:tabIndicator="@drawable/tab_indicator"
             app:tabIndicatorGravity="stretch"
             app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget">
@@ -105,8 +107,8 @@
             android:id="@+id/pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            android:elevation="12dp"
+            android:background="@drawable/radius_top_right"
+            android:elevation="5dp"
             android:layout_marginEnd="12dp"
             />
     </LinearLayout>
@@ -116,7 +118,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_percent="0.96" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"

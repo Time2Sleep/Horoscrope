@@ -42,7 +42,8 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         signProfileImage.setImageResource(resources.obtainTypedArray(R.array.signsImages).getResourceId(signId, 0))
         signDates.text = resources.getStringArray(R.array.signs_date)[signId]
         signName.text = resources.getStringArray(R.array.signs)[signId]
-        profileGender.text = if(sharedPrefs.getBoolean("isMale", true)) "Мужской" else "Женский"
+        var isMale = sharedPrefs.getBoolean("isMale", true)
+        profileGender.text = if(isMale) "Мужской" else "Женский"
         profileName.setText(sharedPrefs.getString("Name", "null"))
         profileName.doAfterTextChanged {
             activity?.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
@@ -52,7 +53,14 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         }
 
 
-
+        profileGender.setOnClickListener {
+            isMale = !isMale
+            activity?.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+                ?.edit()
+                ?.putBoolean("isMale", isMale)
+                ?.apply()
+            profileGender.text = if(isMale) "Мужской" else "Женский"
+        }
         profileBirthBtn.setOnClickListener {
             val calendar: Calendar = Calendar.getInstance()
             val year: Int = calendar.get(Calendar.YEAR)
