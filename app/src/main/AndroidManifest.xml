@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.horoscrope">
+    package="com.rusgamesapps.horoscrope">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <application
@@ -10,16 +10,16 @@
         android:roundIcon="@drawable/app_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Horoscrope">
-        <activity android:name=".SplashActivity"
+        <activity android:name="com.rusgamesapps.horoscrope.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main.MainActivity"
+        <activity android:name="com.rusgamesapps.horoscrope.main.MainActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".settings.UserSettingsActivity"
+        <activity android:name="com.rusgamesapps.horoscrope.settings.UserSettingsActivity"
             android:screenOrientation="portrait"/>
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"

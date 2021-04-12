@@ -9,7 +9,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.horoscrope"
+        applicationId "com.rusgamesapps.horoscrope"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
