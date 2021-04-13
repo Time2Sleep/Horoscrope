@@ -3,12 +3,16 @@ package com.rusgamesapps.horoscrope.main.dto;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public enum Period {
-    DAILY(new SimpleDateFormat("yyyy-MM-dd")),
-    WEEKLY(new SimpleDateFormat("YYYY-ww")),
-    MONTHLY(new SimpleDateFormat("yyyy-MM")),
-    LUNAR(new SimpleDateFormat("yyyy-MM-dd"));
+    DAILY(new SimpleDateFormat("yyyy-MM-dd", RuLocale.LOCALE)),
+
+    WEEKLY(new SimpleDateFormat("YYYY-ww", RuLocale.LOCALE)),
+
+    MONTHLY(new SimpleDateFormat("yyyy-MM", RuLocale.LOCALE)),
+
+    LUNAR(new SimpleDateFormat("yyyy-MM-dd", RuLocale.LOCALE));
 
     final SimpleDateFormat format;
 
