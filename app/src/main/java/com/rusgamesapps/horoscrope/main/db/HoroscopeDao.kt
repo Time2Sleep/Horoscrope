@@ -16,4 +16,7 @@ interface HoroscopeDao {
 
     @Insert
     fun insert(horoscope: Horoscope)
+
+    @Query("DELETE FROM horoscope")
+    fun deleteAll()
 }

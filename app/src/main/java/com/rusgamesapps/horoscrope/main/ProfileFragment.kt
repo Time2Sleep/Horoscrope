@@ -13,15 +13,17 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
+import androidx.room.Room
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.rusgamesapps.horoscrope.R
+import com.rusgamesapps.horoscrope.main.db.AppDatabase
 import java.util.*
 
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     val months = arrayOf("Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря")
-
+    lateinit var db: AppDatabase;
     var birthDay = "0.0.0"
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,7 +42,10 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         var profileBirthBtn: ImageButton = view.findViewById(R.id.profileChangeBirthday)
         var profileName: EditText = view.findViewById(R.id.profileName)
         var clearCache: ImageButton = view.findViewById(R.id.clearCache)
-
+        db = Room.databaseBuilder(
+            view.context,
+            AppDatabase::class.java, "horoscope-db"
+        ).allowMainThreadQueries().build()
         clearCache.setOnClickListener {
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle("Очистить кэш?")
@@ -49,7 +54,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                     // Respond to neutral button press
                 }
                 .setPositiveButton("Очистить") { dialog, which ->
-                    // Respond to positive button press
+                    db.horoscopeDao().deleteAll()
                 }
                 .show()
         }
