@@ -30,7 +30,7 @@ class CompatibilityFragment : Fragment(R.layout.fragment_compatibility) {
     ): View? {
         var adRequest = AdRequest.Builder().build()
 
-        InterstitialAd.load(requireActivity(),"ca-app-pub-2075070947382135/1649177686", adRequest, object : InterstitialAdLoadCallback() {
+        InterstitialAd.load(requireActivity(),"ca-app-pub-3940256099942544/8691691433", adRequest, object : InterstitialAdLoadCallback() {
             override fun onAdFailedToLoad(adError: LoadAdError) {
                 Log.e("ads", adError?.message)
                 mInterstitialAd = null
