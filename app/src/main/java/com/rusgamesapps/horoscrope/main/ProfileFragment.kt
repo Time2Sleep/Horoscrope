@@ -13,6 +13,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.rusgamesapps.horoscrope.R
 import java.util.*
 
@@ -38,6 +39,20 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         var profileBirth: TextView = view.findViewById(R.id.profileBirth)
         var profileBirthBtn: ImageButton = view.findViewById(R.id.profileChangeBirthday)
         var profileName: EditText = view.findViewById(R.id.profileName)
+        var clearCache: ImageButton = view.findViewById(R.id.clearCache)
+
+        clearCache.setOnClickListener {
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Очистить кэш?")
+                .setMessage("Вы уверены, что хотите очистить кэш? \nЧтобы увидеть гороскопы снова, нужно будет подключиться к интернету.")
+                .setNeutralButton("Отмена") { dialog, which ->
+                    // Respond to neutral button press
+                }
+                .setPositiveButton("Очистить") { dialog, which ->
+                    // Respond to positive button press
+                }
+                .show()
+        }
 
         signProfileImage.setImageResource(resources.obtainTypedArray(R.array.signsImages).getResourceId(signId, 0))
         signDates.text = resources.getStringArray(R.array.signs_date)[signId]
