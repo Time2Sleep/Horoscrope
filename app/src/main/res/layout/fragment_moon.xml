@@ -82,15 +82,17 @@
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline8">
+        app:layout_constraintTop_toTopOf="@+id/guideline8"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/lunarHoroscopeDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:padding="20dp"
+            android:paddingBottom="50dp"
             android:elevation="24dp"
             android:text="Луна находится в фазе Убывающая Луна. Четвертая лунная фаза - последняя фаза лунного месяца. Период четвертой четверти, который завершается новолунием. Для данного периода свойственна неторопливость, мягкость, некая вялость. Это время довольно пассивно.
 \n\n
@@ -100,8 +102,12 @@
 \n\n
 Люди в этот период крайне чувствительны, впечатлительны, в большой степени склонны к обидам. Это состояние отражается и в сфере бизнеса. Поэтому в деловой сфере значительные встречи желательно приостановить до следующей фазы лунного месяца.
 \n\n
-Луна находится в фазе Убывающая Луна. Четвертая лунная фаза - последняя фаза лунного месяца. Период четвертой четверти, который завершается новолунием. Для данного периода свойственна неторопливость, мягкость, некая вялость. Это время довольно пассивно."
-            android:textColor="@color/black"
+Луна находится в фазе Убывающая Луна. Четвертая лунная фаза - последняя фаза лунного месяца. Период четвертой четверти, который завершается новолунием. Для данного периода свойственна неторопливость, мягкость, некая вялость. Это время довольно пассивно.
+        \n\n
+        Люди в этот период крайне чувствительны, впечатлительны, в большой степени склонны к обидам. Это состояние отражается и в сфере бизнеса. Поэтому в деловой сфере значительные встречи желательно приостановить до следующей фазы лунного месяца.
+        \n\n
+        Луна находится в фазе Убывающая Луна. Четвертая лунная фаза - последняя фаза лунного месяца. Период четвертой четверти, который завершается новолунием. Для данного периода свойственна неторопливость, мягкость, некая вялость. Это время довольно пассивно."
+        android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="parent"

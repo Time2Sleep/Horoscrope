@@ -184,8 +184,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideline8"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/guideline7"
-                app:layout_constraintTop_toBottomOf="@+id/imageView19"
-                android:layout_marginBottom="40dp">
+                app:layout_constraintTop_toBottomOf="@+id/imageView19">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -200,13 +199,12 @@
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="100dp"
                     android:layout_height="5dp"
-                    android:progressDrawable="@drawable/progress_bar_marriage"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="35dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="20dp"
                     android:progress="50"
-                    />
+                    android:progressDrawable="@drawable/progress_bar_marriage" />
 
                 <TextView
                     android:id="@+id/compatMarriagePercentage"
@@ -216,7 +214,7 @@
                     android:layout_marginTop="45dp"
                     android:layout_marginRight="20dp"
                     android:text="50%"
-                    android:textColor="#BA393F"/>
+                    android:textColor="#BA393F" />
 
                 <TextView
                     android:id="@+id/compatMarriageText"
