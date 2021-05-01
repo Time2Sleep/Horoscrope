@@ -87,73 +87,89 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/navbar_moon_btn"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:srcCompat="@drawable/profile_btn_icon" />
+        app:srcCompat="@drawable/profile_btn_icon"/>
 
 
     <TextView
         android:id="@+id/firstPage"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="15dp"
         android:layout_marginBottom="7dp"
+        android:autoSizeTextType="uniform"
         android:elevation="24dp"
         android:text="Общий"
+        android:textSize="12dp"
         android:textAlignment="center"
         android:textColor="@color/second_font_color"
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toStartOf="@+id/secondPage"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/navbar_main_btn"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/secondPage"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="15dp"
         android:layout_marginBottom="7dp"
+        android:autoSizeTextType="uniform"
+        android:elevation="24dp"
         android:text="Любовный"
+        android:textSize="12dp"
         android:textAlignment="center"
         android:textColor="@color/second_font_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/thirdPage"
-        app:layout_constraintHorizontal_bias="0.5"
 
-        android:elevation="24dp"
-        app:layout_constraintStart_toEndOf="@+id/firstPage" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/firstPage"
+        app:layout_constraintTop_toTopOf="@+id/navbar_love_btn"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/thirdPage"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="15dp"
         android:layout_marginBottom="7dp"
+        android:autoSizeTextType="uniform"
+        android:elevation="24dp"
         android:text="Лунный"
+        android:textSize="12dp"
         android:textAlignment="center"
         android:textColor="@color/second_font_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/fourthPage"
         app:layout_constraintHorizontal_bias="0.5"
-        android:elevation="24dp"
-        app:layout_constraintStart_toEndOf="@+id/secondPage" />
+        app:layout_constraintStart_toEndOf="@+id/secondPage"
+        app:layout_constraintTop_toTopOf="@+id/navbar_moon_btn"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/fourthPage"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="15dp"
         android:layout_marginBottom="7dp"
+        android:autoSizeTextType="uniform"
+        android:elevation="24dp"
         android:text="Профиль"
+        android:textSize="14dp"
         android:textAlignment="center"
         android:textColor="@color/second_font_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        android:elevation="24dp"
-        app:layout_constraintStart_toEndOf="@+id/thirdPage" />
+        app:layout_constraintStart_toEndOf="@+id/thirdPage"
+        app:layout_constraintTop_toTopOf="@+id/navbar_profile_btn"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_end="64dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

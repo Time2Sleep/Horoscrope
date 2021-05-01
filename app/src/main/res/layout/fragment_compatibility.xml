@@ -116,7 +116,8 @@
                     android:layout_marginTop="70dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="20dp"
-                    android:text="Загрузка.." />
+                    android:text="Загрузка.."
+                    android:fontFamily="@font/roboto"/>
 
             </FrameLayout>
 
@@ -171,7 +172,8 @@
                     android:layout_marginTop="70dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="20dp"
-                    android:text="Загрузка.." />
+                    android:text="Загрузка.."
+                    android:fontFamily="@font/roboto" />
             </FrameLayout>
 
             <FrameLayout
@@ -224,7 +226,8 @@
                     android:layout_marginTop="70dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="20dp"
-                    android:text="Загрузка.." />
+                    android:text="Загрузка.."
+                    android:fontFamily="@font/roboto" />
             </FrameLayout>
 
             <androidx.constraintlayout.widget.Guideline

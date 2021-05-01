@@ -53,7 +53,7 @@
         android:id="@+id/imageView13"
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:src="@drawable/moon_moon"
+        android:src="@drawable/moon_svg"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -94,6 +94,7 @@
             android:padding="20dp"
             android:paddingBottom="50dp"
             android:elevation="24dp"
+            android:fontFamily="@font/roboto"
             android:text="Луна находится в фазе Убывающая Луна. Четвертая лунная фаза - последняя фаза лунного месяца. Период четвертой четверти, который завершается новолунием. Для данного периода свойственна неторопливость, мягкость, некая вялость. Это время довольно пассивно.
 \n\n
 Силы и энергия в данное время стремительно идут на убыль. В следствии этого в четвертую лунную фазу рекомендовано оканчивать дела, а также управлять текущими. Свежие мысли и идеи следует отодвинуть на начало последующего лунного месяца. Оптимальное время для подведения итогов.
@@ -107,8 +108,8 @@
         Люди в этот период крайне чувствительны, впечатлительны, в большой степени склонны к обидам. Это состояние отражается и в сфере бизнеса. Поэтому в деловой сфере значительные встречи желательно приостановить до следующей фазы лунного месяца.
         \n\n
         Луна находится в фазе Убывающая Луна. Четвертая лунная фаза - последняя фаза лунного месяца. Период четвертой четверти, который завершается новолунием. Для данного периода свойственна неторопливость, мягкость, некая вялость. Это время довольно пассивно."
-        android:textColor="@color/black"
-            android:textSize="14sp"
+        android:textColor="@color/base_font_color"
+            android:textSize="15dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView14" />
