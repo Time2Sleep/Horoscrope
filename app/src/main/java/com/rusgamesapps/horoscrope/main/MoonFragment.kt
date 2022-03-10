@@ -66,7 +66,7 @@ class MoonFragment : Fragment(R.layout.fragment_moon) {
             view?.findViewById<TextView>(R.id.lunarHoroscopeDescription)?.text =
                 horoscope.description
         } else {
-            AndroidNetworking.post("https://guarded-escarpment-96153.herokuapp.com/api/horoscope")
+            AndroidNetworking.post("https://env-2828191.mircloud.ru/api/horoscope")
                 .setPriority(Priority.LOW)
                 .addApplicationJsonBody(request)
                 .build()

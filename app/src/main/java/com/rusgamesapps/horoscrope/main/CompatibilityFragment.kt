@@ -82,7 +82,7 @@ class CompatibilityFragment : Fragment(R.layout.fragment_compatibility) {
         val female = Sign.values()[femaleSignId]
 
 
-        AndroidNetworking.get("https://guarded-escarpment-96153.herokuapp.com/api/compat")
+        AndroidNetworking.get("https://env-2828191.mircloud.ru/api/compat")
             .setPriority(Priority.LOW)
             .addQueryParameter("male", male.name)
             .addQueryParameter("female", female.name)

@@ -48,7 +48,7 @@ class WeekdayViewPagerAdapter(private val signId: Int, private val db: AppDataba
                 horoscope.description
         } else {
             val request = GetHoroscopeDto(period.name, dateString, sign.name)
-            AndroidNetworking.post("https://guarded-escarpment-96153.herokuapp.com/api/horoscope")
+            AndroidNetworking.post("https://env-2828191.mircloud.ru/api/horoscope")
                 .setPriority(Priority.LOW)
                 .addApplicationJsonBody(request)
                 .build()
